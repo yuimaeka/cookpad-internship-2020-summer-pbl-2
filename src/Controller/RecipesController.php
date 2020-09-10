@@ -23,6 +23,32 @@ class RecipesController extends AppController
         $this->set(compact('recipes'));
     }
 
+    public function suggestRecipes()
+    {
+        $suggest_recipes = array();
+
+        $recipes = $this->Recipes->find('all', [
+            'contain' => ['Ingredients'],
+        ]);
+
+        foreach ($recipes as $recipe){
+            $match=false;
+            foreach ($recipe->ingredients as $ingredient){
+                foreach ($this->request->getData() as $id=>$temp){
+                    if($ingredient->id == $id){
+                        $match=true;
+                    }
+                }
+            }
+            if($match){
+                $suggest_recipes[]=$recipe;
+            }
+        }
+
+        //$test = $this->request->getData();
+        $this->set(compact('suggest_recipes'));
+    }
+
     /**
      * View method
      *

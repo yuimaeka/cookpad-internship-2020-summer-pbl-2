@@ -25,7 +25,7 @@
                     echo $this->Form->control('name');
                     echo $this->Form->control('created_at');
                     echo $this->Form->control('modified_at');
-                    echo $this->Form->control('ingredients._ids', ['options' => $ingredients]);
+                    echo $this->Form->control('ingredients._ids',['options' => $ingredients->toArray(),'multiple' => true,'type'=>'select','class'=>'m-select']);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
