@@ -5,8 +5,7 @@
  */
 ?>
 <div class="ingredients index content">
-    <?= $this->Html->link(__('New Ingredient'), ['action' => 'add'], ['class' => 'button float-right']) ?>
-    <h3><?= __('家にある食材リスト') ?></h3>
+    <h3><img src="../webroot/img/carrot.png" height="36"><?= __('家にある食材リスト') ?></h3>
     <h5>本日使いたい食材を選んで下さい。</h5>
     <?= $this->Form->create(null,['url'=>"/recipes/suggest_recipes"]) ?>
     <ul style="list-style:none;">
@@ -30,7 +29,7 @@
                     echo $this->Form->control('add_ingredient',['options' => $not_my_ingredients,'type'=>'select','label'=>'食材の追加']);
                 ?>
             </fieldset>
-            <?= $this->Form->button(__('追加する')) ?>
+            <?= $this->Form->button(__('追加する'),['class'=>'my-button']) ?>
             <?= $this->Form->end() ?>
     </div>
     

@@ -5,8 +5,8 @@
  */
 ?>
 <div class="ingredients index content">
-    <?= $this->Html->link(__('New Ingredient'), ['action' => 'add'], ['class' => 'button float-right']) ?>
-    <h3><?= __('本日の買い物リスト') ?></h3>
+    <h3><img src="../webroot/img/carrot.png" height="36"><?= __('本日の買い物リスト') ?></h3>
+    <h5>買ったものにチェックを入れてください。</h5>
     <?= $this->Form->create(null,['url'=>"/ingredients/fridge"]) ?>
     <ul style="list-style:none;">
         <?php foreach ($buy_ingredients as $ingredient): ?>
@@ -17,7 +17,7 @@
         <?php endforeach; ?>
     </ul>
     
-    <?= $this->Form->button(__('買い物を終わる'), ['type'=>'submit']) ?>
+    <?= $this->Form->button(__('買い物を終わる'), ['type'=>'submit','class'=>'my-button']) ?>
 
     </form>
     

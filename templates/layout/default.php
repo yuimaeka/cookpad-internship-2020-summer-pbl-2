@@ -14,7 +14,7 @@
  * @var \App\View\AppView $this
  */
 
-$cakeDescription = 'CakePHP: the rapid development php framework';
+$cakeDescription = 'Fridge Manager';
 ?>
 <!DOCTYPE html>
 <html>
@@ -38,7 +38,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <body>
     <nav class="top-nav">
         <div class="top-nav-title">
-            <a href="<?= $this->Url->build('/ingredients/fridge') ?>">家の食材を使い切りたい人のためのサイト</a>
+            <a href="<?= $this->Url->build('/ingredients/fridge') ?>">Fridge Manager</a>
         </div>
     </nav>
     <main class="main">
